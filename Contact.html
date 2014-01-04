@@ -14,56 +14,82 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-		<ul>
-			<li><a href="http://tmonck.github.com/">Home</a></li>
-			<li><a href="test">Resume</a></li>
-			<li><a href="test">Code Projects</a></li>
-		</ul>
-		<p class="view"><a href="https://github.com/tmonck">View My GitHub Profile</a></p>
-      </header>
-	  <form name="htmlform" method="post" action="html_form_send.php">
-		<table width="450px">
-		</tr>
-		<tr>
-		 <td valign="top">
-		  <label for="first_name">First Name *</label>
-		 </td>
-		 <td valign="top">
-		  <input  type="text" name="first_name" maxlength="50" size="30">
-		 </td>
-		</tr>
-		 
-		<tr>
-		 <td valign="top"">
-		  <label for="last_name">Last Name *</label>
-		 </td>
-		 <td valign="top">
-		  <input  type="text" name="last_name" maxlength="50" size="30">
-		 </td>
-		</tr>
-		<tr>
-		 <td valign="top">
-		  <label for="email">Email Address *</label>
-		 </td>
-		 <td valign="top">
-		  <input  type="text" name="email" maxlength="80" size="30">
-		 </td>
-		 
-		</tr>
-		<tr>
-		 <td valign="top">
-		  <label for="comments">Comments *</label>
-		 </td>
-		 <td valign="top">
-		  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-		 </td>
-		 
-		</tr>
-		<tr>
-		 <td colspan="2" style="text-align:center">
-		  <input type="submit" value="Submit">   ( <a href="http://www.freecontactform.com/html_form.php">HTML Form</a> )
-		 </td>
-		</tr>
-		</table>
+		<header>
+			<ul>
+				<li><a href="http://tmonck.github.com/">Home</a></li>
+				<!--<li><a href="test">Resume</a></li>
+				<li><a href="test">Code Projects</a></li>-->
+				<li><a href="http://tmonck.github.com/Contact">Contact Me</a></li>
+			</ul>
+			
+			<p class="view"><a href="https://github.com/tmonck">View My GitHub Profile</a></p>
+		</header>
+	  
+		<div class="ss-form-container">
+			<div class="ss-top-of-page">
+				<div class="ss-form-heading">
+					<h1 class="ss-form-title" dir="ltr">Contact Me</h1>
+					<p> Thank you for taking the time to contact me please use the form below for any questions, comments, or business related inquires.</p>
+					<hr class="ss-email-break" style="display:none;">
+					<div class="ss-required-asterisk">* Required</div>
+				</div>
+			</div>
+		<form action="https://docs.google.com/forms/d/1OmDrRvXT73eTOfGDb--xkoqwBrT-OAJEG_V4gVDfQ1I/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+			<ol>
+				<div class="ss-form-question errorbox-good">
+					<div dir="ltr" class="ss-item ss-item-required ss-text">
+						<div class="ss-form-entry">
+							<label aria-hidden="true" class="ss-q-item-label aria-todo" for="entry_1247959841">
+								<div class="ss-q-title">Name
+									<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+									<span class="ss-required-asterisk">* This is a required field</span>
+								</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+							</label>
+							<input type="text" name="entry.1247959841" value="" class="ss-q-short" id="entry_1247959841" dir="auto" aria-label="Name  " aria-required="true" required="" title="">
+							<div class="error-message"></div>
+						</div>
+					</div>
+				</div>
+				<div class="ss-form-question errorbox-good">
+					<div dir="ltr" class="ss-item ss-item-required ss-text">
+						<div class="ss-form-entry">
+							<label aria-hidden="true" class="ss-q-item-label aria-todo" for="entry_1146580956">
+								<div class="ss-q-title">Email Address
+									<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+									<span class="ss-required-asterisk">* This is a required field</span>
+								</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+							</label>
+							<input type="text" name="entry.1146580956" value="" class="ss-q-short" id="entry_1146580956" dir="auto" aria-label="Email Address  " aria-required="true" required="" title="" width="860">
+							<div class="error-message"></div>
+						</div>
+					</div>
+				</div>
+				<div class="ss-form-question errorbox-good">
+						<div dir="ltr" class="ss-item ss-item-required ss-paragraph-text">
+							<div class="ss-form-entry">
+								<label aria-hidden="true" class="ss-q-item-label aria-todo" for="entry_1876744031">
+									<div class="ss-q-title">Body
+										<label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label>
+										<span class="ss-required-asterisk">* This is a required field</span>
+									</div>
+									<div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+								</label>
+								<textarea name="entry.1876744031" rows="8" cols="0" class="ss-q-long" id="entry_1876744031" dir="auto" aria-label="Body  " aria-required="true" required=""></textarea>
+								<div class="error-message"></div>
+							</div>
+						</div>
+					</div>
+				<input type="hidden" name="draftResponse" value="[,,&quot;2965168582638799902&quot;]">
+				<input type="hidden" name="pageHistory" value="0">
+				<input type="hidden" name="fbzx" value="2965168582638799902">
+
+				<div class="ss-item ss-navigate">
+					<input type="submit" name="submit" value="Submit" id="ss-submit">
+					<div class="ss-secondary-text">Never submit passwords through Google Forms.</div>
+				</div>
+			</ol>
 		</form>
+	</div>
+	 <!--<iframe src="https://docs.google.com/forms/d/1OmDrRvXT73eTOfGDb--xkoqwBrT-OAJEG_V4gVDfQ1I/viewform?embedded=true" width="860" height="594" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>-->
