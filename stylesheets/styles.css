@@ -5,18 +5,20 @@ body {
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#777;
   font-weight:300;
+  background: #000;
 }
 img {
   padding: 10px;
   float: left;
 }
 h1, h2, h3, h4, h5, h6 {
-  color:#222;
+  color:#FFF;
   margin:0 0 20px;
 }
 
 p, ul, ol, table, pre, dl {
   margin:0 0 20px;
+  color: #FFF;
 }
 
 h1, h2, h3 {
@@ -32,7 +34,7 @@ h2 {
 }
 
 h3, h4, h5, h6 {
-  color:#494949;
+  color:#666;
 }
 
 a {
@@ -180,7 +182,7 @@ hr {
 
 footer {
   width:270px;
-  
+  padding-top: 10px;
   position:fixed;
   bottom:50px;
 }
