@@ -101,8 +101,7 @@ img {
 }
 
 header {
-  width:283px;
-  
+  width:383px;
   position:relative;
 }
 
@@ -121,7 +120,7 @@ header ul {
   border-radius:5px;
   border:1px solid #d2d2d2;
   box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
-  width:283px;
+  width:382px;
 }
 
 header li {
