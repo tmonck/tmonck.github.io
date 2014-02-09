@@ -35,4 +35,10 @@
 		<p>During this conversion I will be setting up serval VM's with different OS's and browser versions. I will go over how to start the Grid Hub and nodes from inside the C# code as well as running the tests from a Windows Form Application.
 		For my virtual machines I have used VirtualBox. I have created one with Windows 7 and one with Windows XP. I have also given each of these VM's static IP addresses to make the starting of the nodes easier.</p>
 		
+		<p>Once you have your VM's setup you need to make sure you have downloaded the lastest .jar file for Selenium Server. You can find the latest version <a href="http://docs.seleniumhq.org/download/">here</a>. You should also make sure the 
+		you have the most current version of JAVA install on your PC as Java is required to run the Selenium Server. Now that you have those items let me show you how to start the selenium server. Open a command prompt and navigate to the folder 
+		you have download the selenium server to. Once there type "java -jar selenium-server-standalone-2.39.0.jar -role hub". Your version of the Selenium server may be different than what I have here please substitute your version number for mine.
+		Once that is done you will have started your Selenium grid up. The hub will automatically start using the port of 4444 by default. You can change this by adding the optional parameter - port when you run the command. You can view the status 
+		of the hub by navigating to http://localhost:4444/grid/console in your browser.</p>
 	  </section>
+  </body>
