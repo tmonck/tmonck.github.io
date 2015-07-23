@@ -1,44 +1,23 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Code by tmonck</title>
+---
+layout: default
+title: Tom Monck JR by tmonck
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Code Projects</h1>
-			<ul>
-				<li><a href="http://tmonck.github.com/">Home</a></li>
-				<!--<li><a href="test">Resume</a></li>
-				<li><a href="test">Code Projects</a></li>-->
-				<li><a href="http://tmonck.github.com/Contact">Contact Me</a></li>
-			</ul>
-	  </header>
-	  <section>
-		<h3>
-			<a name="Selenium" class="anchor" href="#Selenium"><span class="octicon octicon-link"></span></a>Selenium
-		</h3>
-		<p>I have written a windows form application that runs UI tests in Chrome and Firefox for my companies web applications. I am currently in the process of converting from using WebDriver to using RemoteWebDriver with Grid 2. 
-		I will be running this in a .Net platform written in C#. I'm going to try and document as much about the conversion that I can on here as I have found very few sites with much information about running Grid in a C# environment.</p>
-		<h3>
-			<a name="Selenium-webdriver-grid" class="anchor" href="#Selenium-webdriver-grid"><span class="octicon octicon-link"></span></a>Selenium Webdriver to RemoteWebDriver with Grid 2.0
-		</h3>
-		<p>During this conversion I will be setting up serval VM's with different OS's and browser versions. I will go over how to start the Grid Hub and nodes from inside the C# code as well as running the tests from a Windows Form Application.
-		For my virtual machines I have used VirtualBox. I have created one with Windows 7 and one with Windows XP. I have also given each of these VM's static IP addresses to make the starting of the nodes easier.</p>
-		
-		<p>Once you have your VM's setup you need to make sure you have downloaded the lastest .jar file for Selenium Server. You can find the latest version <a href="http://docs.seleniumhq.org/download/">here</a>. You should also make sure the 
-		you have the most current version of JAVA install on your PC as Java is required to run the Selenium Server. Now that you have those items let me show you how to start the selenium server. Open a command prompt and navigate to the folder 
-		you have download the selenium server to. Once there type "java -jar selenium-server-standalone-2.39.0.jar -role hub". Your version of the Selenium server may be different than what I have here please substitute your version number for mine.
-		Once that is done you will have started your Selenium grid up. The hub will automatically start using the port of 4444 by default. You can change this by adding the optional parameter - port when you run the command. You can view the status 
-		of the hub by navigating to http://localhost:4444/grid/console in your browser.</p>
-	  </section>
-  </body>
+<section>
+<h3>
+	<a name="Selenium" class="anchor" href="#Selenium"><span class="octicon octicon-link"></span></a>Selenium
+</h3>
+<p>I have written a windows form application that runs UI tests in Chrome and Firefox for my companies web applications. I am currently in the process of converting from using WebDriver to using RemoteWebDriver with Grid 2. 
+I will be running this in a .Net platform written in C#. I'm going to try and document as much about the conversion that I can on here as I have found very few sites with much information about running Grid in a C# environment.</p>
+<h3>
+	<a name="Selenium-webdriver-grid" class="anchor" href="#Selenium-webdriver-grid"><span class="octicon octicon-link"></span></a>Selenium Webdriver to RemoteWebDriver with Grid 2.0
+</h3>
+<p>During this conversion I will be setting up serval VM's with different OS's and browser versions. I will go over how to start the Grid Hub and nodes from inside the C# code as well as running the tests from a Windows Form Application.
+For my virtual machines I have used VirtualBox. I have created one with Windows 7 and one with Windows XP. I have also given each of these VM's static IP addresses to make the starting of the nodes easier.</p>
+
+<p>Once you have your VM's setup you need to make sure you have downloaded the lastest .jar file for Selenium Server. You can find the latest version <a href="http://docs.seleniumhq.org/download/">here</a>. You should also make sure the 
+you have the most current version of JAVA install on your PC as Java is required to run the Selenium Server. Now that you have those items let me show you how to start the selenium server. Open a command prompt and navigate to the folder 
+you have download the selenium server to. Once there type "java -jar selenium-server-standalone-2.39.0.jar -role hub". Your version of the Selenium server may be different than what I have here please substitute your version number for mine.
+Once that is done you will have started your Selenium grid up. The hub will automatically start using the port of 4444 by default. You can change this by adding the optional parameter - port when you run the command. You can view the status 
+of the hub by navigating to http://localhost:4444/grid/console in your browser.</p>
+</section>
