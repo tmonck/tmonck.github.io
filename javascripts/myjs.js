@@ -10,7 +10,7 @@ programmingLanguages.forEach(function(language, index) {
     if (index === programmingLanguages.length - 1){
         document.getElementById("prgLang").innerHTML += `and ${language}`
     } else {
-        document.getElementById("prgLang").innerHTML += `${language},`
+        document.getElementById("prgLang").innerHTML += `${language}, `
     }
 })
 
