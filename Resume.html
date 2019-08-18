@@ -2,22 +2,25 @@
 layout: default
 title: Tom Monck JR by tmonck
 ---
-<div style="text-align: center;" id="pdfNav">
-	<button style="float: left;" id="prev">Previous</button>
-	<strong>
-		<span style="color:white;" id="page_num"></span>
-		<span style="color:white;"> of </span>
-		<span style="color:white;" id="page_count"></span>
-	</strong>
-	<button style="float: right;" id="next">Next</button>
-	<p style="clear: both">Links visible on the PDF are not clickable at this time. You will need to download my resume in order to follow the hyperlinks.</p>
+</br>
+<div style="text-align: center;" class="hide" id="pdfNav">
+	<div style="text-align: center;">
+		<button style="float: left;" id="prev">Previous</button>
+		<strong>
+			<span style="color:white;" id="page_num"></span>
+			<span style="color:white;"> of </span>
+			<span style="color:white;" id="page_count"></span>
+		</strong>
+		<button style="float: right;" id="next">Next</button>
+	</div>
+	</br>
+	<p>Links visible on the PDF are not clickable at this time.</p>
 </div>
 </br>
 
 <canvas id="resume"></canvas>
-
 <form method="get" action="Documents/TomMonckResume.pdf">
-	<button type="submit" id="downloadResume">Download</button>
- </form>
+	<button type="submit" id="downloadResume" class="hide">Download</button>
+</form>
  
- <script type="text/javascript" src="../javascripts/renderPdf.js"></script>
+<script type="text/javascript" src="../javascripts/renderPdf.js"></script>

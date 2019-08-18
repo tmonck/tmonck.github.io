@@ -12,7 +12,7 @@ var pdfDoc = null,
     pageNum = 1,
     pageRendering = false,
     pageNumPending = null,
-    scale = 1.5,
+    scale = 1.4,
     canvas = document.getElementById('resume'),
     ctx = canvas.getContext('2d');
 
@@ -33,21 +33,21 @@ function renderPage(num) {
       canvasContext: ctx,
       viewport: viewport
     };
-    if (pageNum <= 1) {
-        document.getElementById('prev').style.visibility = 'hidden';
-    } else {
-        document.getElementById('prev').style.visibility = 'visible';
-    }
-    if (pageNum >= pdfDoc.numPages) {
-        document.getElementById('next').style.visibility = 'hidden';
-    } else {
-        document.getElementById('next').style.visibility = 'visible';
-    }
     var renderTask = page.render(renderContext);
 
     // Wait for rendering to finish
     renderTask.promise.then(function() {
       pageRendering = false;
+      if (pageNum <= 1) {
+          document.getElementById('prev').style.visibility = 'hidden';
+      } else {
+          document.getElementById('prev').style.visibility = 'visible';
+      }
+      if (pageNum >= pdfDoc.numPages) {
+          document.getElementById('next').style.visibility = 'hidden';
+      } else {
+          document.getElementById('next').style.visibility = 'visible';
+      }
       document.getElementById('pdfNav').style.visibility = 'visible';
       document.getElementById('downloadResume').style.visibility ='visible';
       if (pageNumPending !== null) {

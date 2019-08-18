@@ -237,6 +237,10 @@ footer {
   bottom:50px;
 }
 
+.hide {
+  visibility: hidden;
+}
+
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {
