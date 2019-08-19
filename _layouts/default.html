@@ -1,12 +1,14 @@
 <!doctype html>
 <html>
   <head>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="chrome=1"> -->
     <meta name=”viewport” content=”width=device-width, initial-scale=1″>
     <title>Tom Monck JR by tmonck</title>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/contact.css">
+    <!-- <link rel="stylesheet" href="stylesheets/main.css"> -->
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
@@ -31,19 +33,49 @@
     <div class="wrapper">
       <header>
         <h1>Tom Monck JR</h1>
-			<!-- <ul styles="list-styles: none;">
-				<li><a href="/">Home</a></li>
-				<li></li>
-				<li></li>
-			</ul> -->
-      <p class="view"><a href="https://github.com/tmonck">View My GitHub Profile</a></p>
       </header>
 	  
       <section id="content">
 		    {{ content }}
       </section>
-      <footer>
-        <p><small>Last Updated at {{ site.time }}</small></p>
+      <footer id="footer">
+        <ul class="icons">
+          {% if site.twitter_url %}
+          <li><a href="{{ site.twitter_url }}" class="icon alt fa fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+          {% endif %}
+          {% if site.googleplus_url %}
+          <li><a href="{{ site.googleplus_url }}" class="icon alt fa fa-google-plus" target="_blank"><span class="label">Google+</span></a></li>
+          {% endif %}
+          {% if site.facebook_url %}
+          <li><a href="{{ site.facebook_url }}" class="icon alt fa fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+          {% endif %}
+          {% if site.instagram_url %}
+          <li><a href="{{ site.instagram_url }}" class="icon alt fa fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+          {% endif %}
+          {% if site.pinterest_url %}
+          <li><a href="{{ site.pinterest_url }}" class="icon alt fa fa-pinterest" target="_blank"><span class="label">Pinterest</span></a></li>
+          {% endif %}
+          {% if site.500px_url %}
+          <li><a href="{{ site.500px_url }}" class="icon alt fa fa-500px" target="_blank"><span class="label">500px</span></a></li>
+          {% endif %}
+          {% if site.gitlab_url %}
+          <li><a href="{{ site.gitlab_url }}" class="icon alt fa fa-gitlab" target="_blank"><span class="label">GitLab</span></a></li>
+          {% endif %}
+          {% if site.github_url %}
+          <li><a href="{{ site.github_url }}" class="icon alt fa fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+          {% endif %}
+          {% if site.slack_url %}
+          <li><a href="{{ site.slack_url }}" class="icon alt fa fa-slack" target="_blank"><span class="label">Slack</span></a></li>
+          {% endif %}
+          {% if site.linkedin_url %}
+          <li><a href="{{ site.linkedin_url }}" class="icon alt fa fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+          {% endif %}
+        </ul>
+        <ul class="copyright">
+          <li>&copy; {{ site.title }} {{ site.subtitle }}</li>
+          <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+          <li>Last Updated at {{ site.time }}</li>
+        </ul>
       </footer>
     </div>
   </body>

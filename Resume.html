@@ -5,13 +5,14 @@ title: Tom Monck JR by tmonck
 </br>
 <div style="text-align: center;" class="hide" id="pdfNav">
 	<div style="text-align: center;">
-		<button style="float: left;" id="prev">Previous</button>
+		<input type="button" value="Previous" style="float: left;" id="prev" />
+			
 		<strong>
 			<span style="color:white;" id="page_num"></span>
 			<span style="color:white;"> of </span>
 			<span style="color:white;" id="page_count"></span>
 		</strong>
-		<button style="float: right;" id="next">Next</button>
+		<input type="button" value="Next" style="float: right;" id="next" />
 	</div>
 	</br>
 	<p>Links visible on the PDF are not clickable at this time.</p>
@@ -20,7 +21,7 @@ title: Tom Monck JR by tmonck
 
 <canvas width="856" id="resume"></canvas>
 <form method="get" action="Documents/TomMonckResume.pdf">
-	<button type="submit" id="downloadResume" class="hide">Download</button>
+	<input type="submit" value="Print" id="downloadResume" class="hide" />
 </form>
  
 <script type="text/javascript" src="javascripts/renderPdf.js"></script>

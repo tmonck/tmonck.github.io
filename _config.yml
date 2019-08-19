@@ -1,1 +1,20 @@
+title: Tom Monck Jr
+subtitle:
+email: juniormonck@gmail.com
+street_address: 7005 Field Hill Rd
+city: Raleigh
+state: NC
+zip_code: 27603
+phone: 919-604-0502
+facebook_url:
+github_url: https://github.com/tmonck
+gitlab_url: 
+googleplus_url: 
+instagram_url: 
+linkedin_url: https://www.linkedin.com/in/thomas-monck-jr
+pinterest_url:
+slack_url:
+twitter_url: 
 markdown: kramdown
+plugins:
+  - jekyll-seo-tag
