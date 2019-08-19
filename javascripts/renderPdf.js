@@ -24,7 +24,9 @@ function renderPage(num) {
   pageRendering = true;
   // Using promise to fetch the page
   pdfDoc.getPage(num).then(function(page) {
-    var viewport = page.getViewport({scale: scale});
+    var actualScale = Math.min(window.outerWidth / page.getViewport({scale: scale}).width, 1.4)
+    var viewport = page.getViewport({scale: actualScale});
+    // var viewport = page.getViewport({scale: scale});
     canvas.height = viewport.height;
     canvas.width = viewport.width;
 

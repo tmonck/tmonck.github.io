@@ -2,13 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!-- <meta http-equiv="X-UA-Compatible" content="chrome=1"> -->
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
     <title>Tom Monck JR by tmonck</title>
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+    
+    <script type="text/javascript" src="javascripts/sideNav.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -16,20 +19,28 @@
   
   <body>
   
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/">Home</a>
+      <a href="/Resume">Resume</a>
+      <a href="/Contact">Contact Me</a>
+    </div>
+    
+    <!-- Use any element to open the sidenav -->
+    <span style="color: white;font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     <div class="wrapper">
-	
       <header>
         <h1>Tom Monck JR</h1>
-			<ul>
+			<!-- <ul styles="list-styles: none;">
 				<li><a href="/">Home</a></li>
-				<li><a href="/Resume">Resume</a></li>
-				<li><a href="/Contact">Contact Me</a></li>
-			</ul>
-		<p class="view"><a href="https://github.com/tmonck">View My GitHub Profile</a></p>
+				<li></li>
+				<li></li>
+			</ul> -->
+      <p class="view"><a href="https://github.com/tmonck">View My GitHub Profile</a></p>
       </header>
 	  
-      <section>
-		{{ content }}
+      <section id="content">
+		    {{ content }}
       </section>
       <footer>
         <p><small>Last Updated at {{ site.time }}</small></p>
