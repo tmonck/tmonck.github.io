@@ -1,54 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
-html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-pre, a, abbr, acronym, address, big, cite,
-code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
-canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
-section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-  vertical-align: baseline;}
   
-  article, aside, details, figcaption, figure,
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
 body {
   padding:50px;
-  font:16px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 15pt;
   color:#777;
   font-weight:300;
   background: #000;
 }
+
 img {
   padding: 10px;
   float: left;
 }
 h1, h2, h3, h4, h5, h6 {
   color:#FFF;
-  margin:0 0 20px;
+  /* margin:0 0 20px; */
 }
 
 p, ul, ol, table, pre, dl {
   margin:0 0 20px;
   color: #FFF;
-}
-
-h1, h2, h3 {
-  line-height:1.1;
-}
-
-h1 {
-  font-size:28px;
 }
 
 h2 {
@@ -73,7 +50,6 @@ a small {
 }
 
 .wrapper {
-  width:860px;
   margin:0 auto;
 }
 
@@ -210,30 +186,6 @@ button {
   border:1px solid #d2d2d2;
   box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
   width: 70px;
-}
-
-.ss-form-container{color: #FFF;
-  margin-left: auto;
-  margin-right: auto;
-  width: 420px;
-}
-
-.ss-q-short {
-  margin-left: -10px;
-  width:420px;
-}
-
-.ss-q-long{
-  margin-left: -10px;
-  width:420px;
-}
-.ss-required-asterisk{
-  color:red;
-}
-
-#ss-submit{
-float:right;
-margin-right: -5px;
 }
 
 section {
@@ -374,18 +326,6 @@ footer {
   margin-left: 50px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
 @-ms-viewport{
   width: device-width;
 }
@@ -423,17 +363,19 @@ ul.icons li {
     padding-left: 0;
 }
 
- #footer .copyright li {
-      border-left: solid 1px _palette(border);
-      color: _palette(fg-light);
-      display: inline-block;
-      line-height: 1;
-      margin-left: 1em;
-      padding-left: 1em;
- }
- #footer .copyright li :first-child {
-        border-left: 0;
-        margin-left: 0;
-        padding-left: 0;
-  }
-    
+#footer .copyright li {
+  border-left: solid 1px _palette(border);
+  color: _palette(fg-light);
+  display: inline-block;
+  line-height: 1;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+#footer .copyright li :first-child {
+  border-left: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+canvas {
+  justify-content: center
+}
