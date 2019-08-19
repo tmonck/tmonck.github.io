@@ -259,7 +259,6 @@ footer {
   }
   
   section {
-    border:1px solid #e5e5e5;
     border-width:1px 0;
     padding:20px 0;
     margin:0 0 20px;
@@ -291,6 +290,10 @@ footer {
   
   pre, code {
     word-wrap:normal;
+  }
+
+  img {
+    float: none;
   }
 }
 
@@ -360,12 +363,7 @@ footer {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-width: 640px) {
-  img {
-    float: none;
-  }
-}
+
 @-ms-viewport{
   width: device-width;
 }
