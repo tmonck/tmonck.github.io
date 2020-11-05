@@ -8,6 +8,9 @@ linkedin_url: https://www.linkedin.com/in/thomas-monck-jr
 markdown: kramdown
 include:
   - _pages
+exclude:
+  - temp/
+  - _old/
 sass:
   sass_dir: _sass
 url: https://tom.monck.info
