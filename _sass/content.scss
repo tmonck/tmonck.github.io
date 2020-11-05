@@ -1,0 +1,84 @@
+body {
+    background-color: $dark-blue !important;
+    max-width: 960px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 20px 300px 20px 300px;
+}
+footer {
+    flex-direction: row
+}
+p, span{
+    color: $gray !important;
+}
+h1, h2, h3{
+    color: $dark-slate-gray;
+    font-weight: bold;
+		line-height: 1.65;
+		margin: 0 0 0 0;
+}
+h3 {
+		font-size: 1.35em;
+}
+
+a {
+    color: $forest-green;
+}
+a:hover {
+    color: $dark-slate-gray;
+}
+
+#content {
+    padding: 5px;
+}
+
+#pdfNav {
+    strong, p {
+        display: flex;
+        justify-content: center;
+        span {
+            padding: 10px;
+        }
+    }
+    #prev {
+        visibility: hidden;
+        float: left;
+    }
+    #prev.visible {
+        visibility: visible;
+    }
+    #next {
+        visibility: hidden;
+        float: right;
+    }
+    #next.visible {
+        visibility: visible;
+    }
+}
+
+img {
+    float: left;
+    margin-right: 1em;
+}
+
+
+ul#navBar {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    li {
+        padding: 5px;
+    }
+}
+
+ul.icons {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+@-ms-viewport{
+    width: device-width;
+}

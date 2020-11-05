@@ -1,20 +1,20 @@
 title: Tom Monck Jr
 subtitle:
-email: juniormonck@gmail.com
-street_address: Contact me via email for my address.
-city: 
-state:
-zip_code:
+email: tom@monck.info
 phone: Contact me via email for my phone number.
-facebook_url:
+street_address: Contact me via email for my address.
 github_url: https://github.com/tmonck
-gitlab_url: 
-googleplus_url: 
-instagram_url: 
 linkedin_url: https://www.linkedin.com/in/thomas-monck-jr
-pinterest_url:
-slack_url:
-twitter_url: 
 markdown: kramdown
-plugins:
-  - jekyll-seo-tag
+include:
+  - _pages
+sass:
+  sass_dir: _sass
+url: https://tom.monck.info
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default

@@ -1,0 +1,26 @@
+---
+layout: default
+title: resume
+permalink: /resume
+---
+</br>
+<div id="pdfNav">
+    <strong>
+        <span id="page_num"></span>
+        <span>of</span>
+        <span id="page_count"></span>
+    </strong>
+    <!-- <span id="prev"></span> -->
+    <input type="button" value="Previous" id="prev" />
+    <!-- <span id="next"></span> -->
+    <input type="button" value="Next" id="next" />
+    <p>Links visible on the PDF are not clickable at this time.</p>
+</div>
+</br>
+</br>
+<canvas id="resume"></canvas>
+<form method="get" action="assets/docs/TomMonckResume.pdf">
+	  <input type="submit" value="Print" id="downloadResume" class="hide" />
+</form>
+
+<script type="text/javascript" src="assets/js/renderPdf.js"></script>
