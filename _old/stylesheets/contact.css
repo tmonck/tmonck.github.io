@@ -560,7 +560,7 @@ button,
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    /* font-family: 'Font Awesome 5 Free'; */
+    font-family: 'Font Awesome 5 Free';
     font-weight: 400;
 }
 
@@ -581,7 +581,6 @@ button,
 }
 
 .icon.alt:before {
-    
     background: rgba(212, 212, 255, 0.035);
     border-radius: 100%;
     color: #242943;
