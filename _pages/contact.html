@@ -4,68 +4,68 @@ title: contact
 permalink: /contact
 ---
 <section id="contact">
-<div class="inner">
-	<section>
-      <form action="https://formspree.io/juniormonck@gmail.com" method="POST">
-        <div class="fields">
-			      <div class="field half first">
-				        <label for="name">Name</label>
-				        <input type="text" name="name" id="name" />
-			      </div>
-			      <div class="field half">
-				        <label for="email">Email</label>
-				        <input type="email" name="_replyto" id="email" />
-			      </div>
-			      <div class="field half">
-				        <label for="message">Message</label>
-				        <textarea name="message" id="message" rows="6"></textarea>
-			      </div>
-        </div>
-        <div class="form-actions">
-              <input type="submit" value="Send Message" class="special" />
-              <input type="reset" value="Clear" />
-        </div>
-		</form>
-	</section>
-	<section class="split">
-		<section>
-			<div class="contact-method">
-				<span class="icon solid alt fa fa-envelope"></span>
-				<h3>Email</h3>
-        <span>This form will send me an email please fill out your information and a reason for reaching out. I will respond at my earliest convience.</span>
-			</div>
-		</section>
-		<section>
-			<div class="contact-method">
-				<span class="icon solid alt fa fa-phone"></span>
-				<h3>Phone</h3>
-				<span>{{ site.phone }}</span>
-			</div>
-		</section>
-    <!-- TODO: Do I need the below section? Nothing is populated with information -->
-		<section>
-			<div class="contact-method">
-				<span class="icon solid alt fa fa-home"></span>
-				<h3>Address</h3>
-				<span>
-				{% if site.street_address %}
-				    {{ site.street_address }}<br />
-				{% endif %}
-				{% if site.city %}
-				    {{ site.city }},
-				{% endif %}
-				{% if site.state %}
-				    {{ site.state }}
-				{% endif %}
-				{% if site.zip_code %}
-				    {{ site.zip_code }}<br />
-				{% endif %}
-				{% if site.country %}
-				    {{ site.country }}
-				{% endif %}
-				</span>
-			</div>
-		</section>
-	</section>
-</div>
+    <div class="inner">
+        <section>
+            <form action="https://formspree.io/juniormonck@gmail.com" method="POST">
+                <div class="fields">
+			              <div class="field half first">
+				                <label for="name">Name</label>
+				                <input type="text" name="name" id="name" />
+			              </div>
+			              <div class="field half">
+				                <label for="email">Email</label>
+				                <input type="email" name="_replyto" id="email" />
+			              </div>
+			              <div class="field half">
+				                <label for="message">Message</label>
+				                <textarea name="message" id="message" rows="6"></textarea>
+			              </div>
+                </div>
+                <div class="form-actions">
+                    <input type="submit" value="Send Message" class="special" />
+                    <input type="reset" value="Clear" />
+                </div>
+		        </form>
+	      </section>
+	      <section class="split">
+		        <section>
+			          <div class="contact-method">
+				            <span class="icon solid alt fa fa-envelope"></span>
+				            <h3>Email</h3>
+                    <span>This form will send me an email please fill out your information and a reason for reaching out. I will respond at my earliest convience.</span>
+			          </div>
+		        </section>
+		        <section>
+			          <div class="contact-method">
+				            <span class="icon solid alt fa fa-phone"></span>
+				            <h3>Phone</h3>
+				            <span>{{ site.phone }}</span>
+			          </div>
+		        </section>
+            <!-- TODO: Do I need the below section? Nothing is populated with information -->
+		        <section>
+			          <div class="contact-method">
+				            <span class="icon solid alt fa fa-home"></span>
+				            <h3>Address</h3>
+				            <span>
+				                {% if site.street_address %}
+				                {{ site.street_address }}<br />
+				                {% endif %}
+				                {% if site.city %}
+				                {{ site.city }},
+				                {% endif %}
+				                {% if site.state %}
+				                {{ site.state }}
+				                {% endif %}
+				                {% if site.zip_code %}
+				                {{ site.zip_code }}<br />
+				                {% endif %}
+				                {% if site.country %}
+				                {{ site.country }}
+				                {% endif %}
+				            </span>
+			          </div>
+		        </section>
+	      </section>
+    </div>
 </section>
