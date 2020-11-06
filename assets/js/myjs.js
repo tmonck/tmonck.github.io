@@ -1,12 +1,7 @@
 const currentDate = new Date();
 const myBirthDate = new Date(86,3,30);
-const oldestBirthDate = new Date(2011,8,29);
-const youngestBirthDate = new Date(2015,4,21);
 const myAge = (currentDate - myBirthDate)/(1000*60*60*24*365);
-const oldest = (currentDate - oldestBirthDate)/(1000*60*60*24*365);
-const youngest = (currentDate - youngestBirthDate)/(1000*60*60*24*365);
-const programmingLanguages = ['C#', 'Javascript', 'Python', 'Java'];
-programmingLanguages.forEach(function(language, index) {
+['C#', 'Javascript', 'Typescript', 'Python', 'Java'].forEach(function(language, index) {
     if (index === programmingLanguages.length - 1){
         document.getElementById("prgLang").innerHTML += `and ${language}`;
     } else {
