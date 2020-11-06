@@ -1,4 +1,3 @@
-// TODO: Clean up this file
 const currentDate = new Date();
 const myBirthDate = new Date(86,3,30);
 const oldestBirthDate = new Date(2011,8,29);

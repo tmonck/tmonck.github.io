@@ -1,5 +1,3 @@
-// If absolute URL from the remote server is provided, configure the CORS
-// header on that server.
 var url = 'assets/docs/TomMonckResume.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
