@@ -11,6 +11,4 @@ programmingLanguages.forEach(function(language, index) {
 });
 
 document.getElementById("myAge").innerHTML = myAge.toFixed(0);
-document.getElementById("oldestAge").innerHTML = oldest.toFixed(0);
-document.getElementById("youngestAge").innerHTML = youngest.toFixed(0);
 document.getElementById("numOfPrgLang").innerHTML = programmingLanguages.length;
