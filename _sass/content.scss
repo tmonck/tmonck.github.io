@@ -6,8 +6,23 @@ body {
     flex-flow: row wrap;
     margin: 20px 300px 20px 300px;
 }
+
+.link-annotation {
+    position: absolute;
+    cursor: pointer;
+    outline:var(--link-outline);
+
+    &:hover{
+      backdrop-filter:var(--hcm-highlight-filter);
+
+      opacity:0.2;
+      background-color:$yellow;
+      box-shadow:0 2px 10px $yellow;
+    }
+}
+
 footer {
-    flex-direction: row
+    flex-direction: row;
 }
 p, span{
     color: $gray !important;
@@ -34,6 +49,9 @@ a:hover {
 }
 
 #pdfNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     strong, p {
         display: flex;
         justify-content: center;
@@ -43,14 +61,14 @@ a:hover {
     }
     #prev {
         visibility: hidden;
-        float: left;
+        margin-right: auto;
     }
     #prev.visible {
         visibility: visible;
     }
     #next {
         visibility: hidden;
-        float: right;
+        margin-left: auto;
     }
     #next.visible {
         visibility: visible;

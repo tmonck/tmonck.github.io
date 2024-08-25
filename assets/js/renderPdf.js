@@ -1,12 +1,11 @@
-var url = 'assets/docs/TomMonckResume.pdf';
+const url = 'assets/docs/TomMonckResume.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
-var { pdfjsLib } = globalThis;
-
+const { pdfjsLib, PDFViewerApplication } = globalThis;
 // The workerSrc property shall be specified.
-pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@4.4.168/build/pdf.worker.mjs';
 
-var pdfDoc = null,
+let pdfDoc = null,
     pageNum = 1,
     pageRendering = false,
     pageNumPending = null,
@@ -15,51 +14,91 @@ var pdfDoc = null,
     ctx = canvas.getContext('2d');
 
 /**
+ * Get annotation data and render the annotation layer
+ */
+async function addAnnotations(context, viewport, page) {
+  console.log("trying to addAnnotations");
+  console.log(canvas);
+  const container = document.getElementById('pdf-container');
+  const annotationsData = await page.getAnnotations();
+  const canvasRect = canvas.getBoundingClientRect();
+  annotationsData.forEach(annotation => {
+    console.log(annotation);
+        if (annotation.subtype === 'Link') {
+          const rect = annotation.rect;
+          const scale = viewport.scale;
+          const x = (rect[0] * scale) + canvasRect.left;
+          const y = ((viewport.height * scale) - (rect[1] * scale)) - canvasRect.top;
+          const width = (rect[2] - rect[0]) * scale;
+          const height = (rect[3] - rect[1])* scale;
+
+          // Create a hyperlink overlay
+          const linkDiv = document.createElement('div');
+          linkDiv.className = 'link-annotation';
+          linkDiv.style.left = `${x}px`;
+          linkDiv.style.top = `${y}px`;
+          linkDiv.style.width = `${width}px`;
+          linkDiv.style.height = `${height}px`;
+          linkDiv.title = annotation.url; // Hover text
+
+          // Click event to open the URL
+          linkDiv.addEventListener('click', () => {
+              window.open(annotation.url, '_blank');
+          });
+
+          document.getElementById('pdf-container').appendChild(linkDiv);
+        }
+    });
+};
+
+function clearAnnotations() {
+    const linkAnnotations = document.querySelectorAll('.link-annotation');
+    linkAnnotations.forEach(link => link.remove());
+}
+
+/**
  * Get page info from document, resize canvas accordingly, and render page.
  * @param num Page number.
  */
-function renderPage(num) {
+async function renderPage(num) {
   pageRendering = true;
   // Using promise to fetch the page
-  pdfDoc.getPage(num).then(function(page) {
-      var actualScale = Math.min(window.outerWidth / page.getViewport({scale: scale}).width, 1.4);
-    var viewport = page.getViewport({scale: actualScale});
-    // var viewport = page.getViewport({scale: scale});
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
+  const page = await pdfDoc.getPage(num);
+  const actualScale = Math.min(window.outerWidth / page.getViewport({scale: scale}).width, 1.4);
+  const viewport = page.getViewport({scale: actualScale});
+  // const viewport = page.getViewport({scale: scale});
+  canvas.height = viewport.height;
+  canvas.width = viewport.width;
 
-    // Render PDF page into canvas context
-    var renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
-    var renderTask = page.render(renderContext);
+  // Render PDF page into canvas context
+  const renderContext = {
+    canvasContext: ctx,
+    viewport: viewport,
+  };
+  // Clear canvas and existing annotations
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  clearAnnotations();
+  const renderTask = page.render(renderContext);
 
-    // Wait for rendering to finish
-    renderTask.promise.then(function() {
-      pageRendering = false;
-      if (pageNum <= 1) {
-          console.log("Removing visible class from prev");
-          document.getElementById('prev').classList.remove("visible");
-      } else {
-          console.log("Adding visible class from prev");
-          document.getElementById('prev').classList.add("visible");
-      }
-      if (pageNum >= pdfDoc.numPages) {
-          console.log("Removing visible class from next");
-          document.getElementById('next').classList.remove("visible");
-      } else {
-          console.log("Adding visible class from next");
-          document.getElementById('next').classList.add("visible");
-      }
-      if (pageNumPending !== null) {
-        // New page rendering is pending
-        renderPage(pageNumPending);
-        pageNumPending = null;
-      }
-    });
-  });
-
+  // Wait for rendering to finish
+  await renderTask.promise;
+  await addAnnotations(ctx, viewport, page);
+  pageRendering = false;
+  if (pageNum <= 1) {
+      document.getElementById('prev').classList.remove("visible");
+  } else {
+      document.getElementById('prev').classList.add("visible");
+  }
+  if (pageNum >= pdfDoc.numPages) {
+      document.getElementById('next').classList.remove("visible");
+  } else {
+      document.getElementById('next').classList.add("visible");
+  }
+  if (pageNumPending !== null) {
+    // New page rendering is pending
+    renderPage(pageNumPending);
+    pageNumPending = null;
+  }
   // Update page counters
   document.getElementById('page_num').textContent = num;
 }
@@ -103,10 +142,9 @@ document.getElementById('next').addEventListener('click', onNextPage);
 /**
  * Asynchronously downloads PDF.
  */
-pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-  pdfDoc = pdfDoc_;
-  document.getElementById('page_count').textContent = pdfDoc.numPages;
+const pdfDoc_ = await pdfjsLib.getDocument(url).promise;
+pdfDoc = pdfDoc_;
+document.getElementById('page_count').textContent = pdfDoc.numPages;
 
-  // Initial/first page rendering
-  renderPage(pageNum);
-});
+// Initial/first page rendering
+renderPage(pageNum);

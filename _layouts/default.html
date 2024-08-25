@@ -8,7 +8,8 @@
     <title>Tom Monck JR by tmonck</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+    <script src="https://unpkg.com/pdfjs-dist@4.4.168/build/pdf.mjs" type="module"></script>
+    <script src="https://unpkg.com/pdfjs-dist@4.4.168/web/pdf_viewer.mjs" type="module"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -20,11 +21,11 @@
           <li><a href="/contact">Contact Me</a></li>
       </ul>
       <div>
-    <div class="wrapper">
-      <section id="content">
-		    {{ content }}
-      </section>
-    </div>
+        <div class="wrapper">
+          <section id="content">
+		        {{ content }}
+          </section>
+        </div>
       <footer id="footer">
         <ul class="icons">
           {% if site.github_url %}
