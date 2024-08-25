@@ -17,20 +17,21 @@ let pdfDoc = null,
  * Get annotation data and render the annotation layer
  */
 async function addAnnotations(context, viewport, page) {
-  console.log("trying to addAnnotations");
-  console.log(canvas);
   const container = document.getElementById('pdf-container');
   const annotationsData = await page.getAnnotations();
   const canvasRect = canvas.getBoundingClientRect();
   annotationsData.forEach(annotation => {
-    console.log(annotation);
         if (annotation.subtype === 'Link') {
           const rect = annotation.rect;
           const scale = viewport.scale;
           const x = (rect[0] * scale) + canvasRect.left;
-          const y = ((viewport.height * scale) - (rect[1] * scale)) - canvasRect.top;
           const width = (rect[2] - rect[0]) * scale;
           const height = (rect[3] - rect[1])* scale;
+          // This worked for a bit till I adjusted the pdfNav section. I'm keeping for historical context
+          // const y = ((viewport.height * scale) - (rect[1] * scale)) - canvasRect.top;
+          // Eveything lined up except the y axis was off by the height of the rect.
+          const y =  (canvasRect.bottom - height) - (rect[1] * scale) ;
+
 
           // Create a hyperlink overlay
           const linkDiv = document.createElement('div');

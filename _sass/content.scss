@@ -6,7 +6,6 @@ body {
     flex-flow: row wrap;
     margin: 20px 300px 20px 300px;
 }
-
 .link-annotation {
     position: absolute;
     cursor: pointer;
@@ -62,6 +61,7 @@ a:hover {
     #prev {
         visibility: hidden;
         margin-right: auto;
+        // float: left;
     }
     #prev.visible {
         visibility: visible;
@@ -69,6 +69,7 @@ a:hover {
     #next {
         visibility: hidden;
         margin-left: auto;
+        // float: right;
     }
     #next.visible {
         visibility: visible;
